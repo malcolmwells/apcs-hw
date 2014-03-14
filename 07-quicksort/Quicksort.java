@@ -1,4 +1,4 @@
-//Doesn't work when the array contains two numbers of value pivot; I'm not sure how to fix this.
+//[qsort, not the second version] Doesn't work when the array contains two numbers of value pivot; I'm not sure how to fix this.
 import java.util.*;
 public class Quicksort{
     public static int[] qsort(int[] L){
@@ -43,8 +43,8 @@ public class Quicksort{
     public static int partition(int[] a, int L, int R){
 	int PI = (int)(Math.random()*(R-L))+L;
 	int PV = a[PI];
-	a[PI] = a[R];
-	a[R] = PV;
+	a[PI] = a[R-1];
+	a[R-1] = PV;
 	int SI = L;
 	for(int i = L;i<R;i++){
 	    if(a[i] < PV){
@@ -53,13 +53,23 @@ public class Quicksort{
 		a[i] = x;
 		SI++;
 	    }
-	   
+	}
+	a[R-1] = a[SI];
+	a[SI] = PV;
+	return SI;
     }
-    public static int[] qsort2(int[] L){
+    public static void qsort2(int[] a, int L, int R){
+	if(R-L > 1){
+	    for(int x = L;x<R;x++){
+	    }
+	    int PI = partition(a, L, R);
+	    qsort2(a, L, PI);
+	    qsort2(a, PI, R);
+	}
     }
     public static void main(String[]args){
 	int[] L = {4, 6, 1, 12, 5};
-	L = qsort(L);
+	qsort2(L, 0, L.length);
 	for(int x : L){
 	    System.out.print(x + " ");
 	}

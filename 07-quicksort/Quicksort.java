@@ -40,6 +40,23 @@ public class Quicksort{
 	    return L;
 	}
     }
+    public static int partition(int[] a, int L, int R){
+	int PI = (int)(Math.random()*(R-L))+L;
+	int PV = a[PI];
+	a[PI] = a[R];
+	a[R] = PV;
+	int SI = L;
+	for(int i = L;i<R;i++){
+	    if(a[i] < PV){
+		int x = a[SI];
+		a[SI] = a[i];
+		a[i] = x;
+		SI++;
+	    }
+	   
+    }
+    public static int[] qsort2(int[] L){
+    }
     public static void main(String[]args){
 	int[] L = {4, 6, 1, 12, 5};
 	L = qsort(L);

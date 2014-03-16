@@ -56,7 +56,18 @@ public class Quicksort{
 	}
 	a[R-1] = a[SI];
 	a[SI] = PV;
-	return SI;
+	int RSI = SI;
+	int lWall = SI;
+	while(SI < R){
+	    if (a[SI] == PV){
+		int SIV = a[SI];
+		a[SI] = a[RSI];
+		a[RSI] = SIV;
+		RSI++;
+	    }
+	    SI++;
+	}
+	    return (lWall+RSI)/2;
     }
     public static void qsort2(int[] a, int L, int R){
 	if(R-L > 1){

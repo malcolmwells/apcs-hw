@@ -19,4 +19,11 @@ public class Node{
     public String toString(){
 	return "Data: "+data;
     }
+    public int length(){
+	if(next == null){
+	    return 1;
+	}else{
+	    return 1+next.length();
+	}
+    }
 }

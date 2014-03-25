@@ -1,13 +1,17 @@
 public class MyLinkedList{
     private Node head;
+    private Node tail;
     public MyLinkedList(){
 	head = null;
+	tail = null;
     }
     public MyLinkedList(Node head){
 	this.head = head;
+	tail = head;
     }
     public MyLinkedList(String data){
 	this.head = new Node(data);
+	tail = head;
     }
     public String toString(){
 	Node tmp = head;
@@ -19,7 +23,12 @@ public class MyLinkedList{
 	return ans;
     }
     public void add(String s){
+<<<<<<< HEAD
 	add(length(), s);
+=======
+	tail.setNext(new Node(s));
+	tail = tail.getNext();
+>>>>>>> d84a05b6db72afde0187996e9f387ce82efb064a
     }
     private Node nget(int index){
 	Node tmp = head;
@@ -33,7 +42,7 @@ public class MyLinkedList{
 	for(int x = 0;x<index;x++){
 	    tmp = tmp.getNext();
 	}
-	tmp = ins;
+	tmp.setData(ins.getData());
     }
     public void set(int i, String s){
 	Node tmp = new Node(s);
@@ -46,6 +55,9 @@ public class MyLinkedList{
 	Node tmp = new Node(s);
 	tmp.setNext(nget(i));
 	if(i>0){
+	    if(i == length()){
+		tail = tmp;
+	    }	
 	    nget(i-1).setNext(tmp);
 	}else{
 	    tmp.setNext(head);
@@ -55,6 +67,9 @@ public class MyLinkedList{
     public String remove(int i){
 	String ans = get(i);
 	if(i>0){
+	    if(i == length()){
+		tail = nget(i-1);
+	    }
 	    nget(i-1).setNext(nget(i+1));
 	} else {
 	    head = nget(i+1);
@@ -77,5 +92,8 @@ public class MyLinkedList{
 	    tmp = tmp.getNext();
 	}
 	return counter;
+    }
+    public int nlength(){
+	return head.length();
     }
 }

@@ -19,9 +19,7 @@ public class MyLinkedList{
 	return ans;
     }
     public void add(String s){
-	Node tmp = new Node(s);
-	tmp.setNext(head);
-	head = tmp;
+	add(length(), s);
     }
     private Node nget(int index){
 	Node tmp = head;

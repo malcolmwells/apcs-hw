@@ -1,6 +1,6 @@
 public class Driver{
     public static void main(String[]args){
-	Node a = new Node("A");
+	/*	Node a = new Node("A");
 	a.setNext(new Node("B"));
 	a.getNext().setNext(new Node("C"));
 	//0
@@ -22,6 +22,16 @@ public class Driver{
 	//6
 	System.out.println(l.find("0"));
 	//7
+	System.out.println(l.length());*/
+	Node a = new Node("a");
+	MyLinkedList l = new MyLinkedList(a);
+	MyLinkedList n = new MyLinkedList(a);
+	for(int x = 0;x<100000;x++){
+	    l.add("a");
+	    n.add("a");
+	}
+	System.out.println("start");
 	System.out.println(l.length());
+	System.out.println(n.nlength());
     }
 }

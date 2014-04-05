@@ -23,12 +23,9 @@ public class MyLinkedList{
 	return ans;
     }
     public void add(String s){
-<<<<<<< HEAD
 	add(length(), s);
-=======
 	tail.setNext(new Node(s));
 	tail = tail.getNext();
->>>>>>> d84a05b6db72afde0187996e9f387ce82efb064a
     }
     private Node nget(int index){
 	Node tmp = head;

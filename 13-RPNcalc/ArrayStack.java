@@ -20,9 +20,7 @@ public class ArrayStack{
     }
     public String pop(){
 	index--;
-	String s = data[index];
-	data[index] = null;
-	return s;
+	return data[index];
     }
     public String peek(){
 	return data[index-1];

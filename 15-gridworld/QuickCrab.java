@@ -21,9 +21,12 @@ public class QuickCrab extends CrabCritter{
         int[] dirs =
 	    { Location.LEFT, Location.RIGHT };
         for (Location loc : getLocationsInDirections(dirs))
-            if (getGrid().get(loc) == null)
+            if (getGrid().get(loc) == null && getGrid())
                 locs.add(loc);
 
         return locs;
+    }
+    public void makeMove(Location loc){
+	
     }
 }

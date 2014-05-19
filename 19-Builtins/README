@@ -8,9 +8,13 @@ data, red nodes have two black children, all node-descendant paths have the
 same number of black nodes). HashMap is an implementation of the Map interface 
 (still AbstractMap, but not NavigableMap like TreeMap), using a hash table. 
 
-We found HashMap to be faster for both adding and removal functions [exact
+We found TreeMap to be faster for both adding and removal functions [exact
 times will be added in class Monday morning; I can't access them at the moment 
 due to server issues (which are also preventing me from finishing the running
 median)]
 
+TreeMap: adding + removal
+	 0m1.356s
+HashMap: adding + removal
+	 0m1.560s
 The built-in heap structure is the "PriorityQueue."

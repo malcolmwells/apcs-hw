@@ -1,0 +1,16 @@
+HashMap uses keys of a given type to store and refer to values (somewhat like 
+a Python dictionary) whereas HashSet takes the form of a Set (no duplicate 
+values), referring to objects by position or instance instead of using keys.
+
+TreeMap is an implementation of NavigableMap using a red-black tree (nodes are
+assigned binary colors, with root and leaves black and leaves containing no
+data, red nodes have two black children, all node-descendant paths have the
+same number of black nodes). HashMap is an implementation of the Map interface 
+(still AbstractMap, but not NavigableMap like TreeMap), using a hash table. 
+
+We found HashMap to be faster for both adding and removal functions [exact
+times will be added in class Monday morning; I can't access them at the moment 
+due to server issues (which are also preventing me from finishing the running
+median)]
+
+The built-in heap structure is the "PriorityQueue."

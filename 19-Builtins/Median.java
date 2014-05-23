@@ -3,8 +3,12 @@ public class Median{
     private PriorityQueue<Integer> less;
     private PriorityQueue<Integer> greater;
     public Median(){
-	less = new PriorityQueue<Integer>();
+	less = new PriorityQueue<Integer>(10, new RevComp());
 	greater = new PriorityQueue<Integer>();
+    }
+    public String toString(){
+	String ans = less.peek().toString();
+	return ans + ", " + greater.peek().toString();
     }
     public void add(int x){
 	if(less.size() > greater.size())
@@ -24,8 +28,22 @@ public class Median{
 	else
 	    return (less.poll().intValue() + greater.poll().intValue())/2;
     }
-    /*Unsure how to implement a Comparator here; I don't think I understand the syntax. That said, it's
-      necessary for the PriorityQueues to work correctly.
-    */
+    public static void main(String[]args){
+	Median m = new Median();
+	m.add(3);
+	m.add(2);
+	System.out.println(m.toString());
+	m.add(10);
+	m.add(100);
+	System.out.println(m.toString());
+	m.add(-5);
+	System.out.println(m.toString());
+	System.out.println(m.findMedian());
+    }
+    private class RevComp implements Comparator<Integer>{
+	public int compare(Integer x, Integer y){
+	    return y.intValue() - x.intValue();
+	}
+    }
 	
 }
